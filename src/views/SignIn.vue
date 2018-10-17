@@ -98,7 +98,7 @@
             password: this.password
           }
         })
-          .then(response => {
+          .then(() => {
             this.$router.push({ name: 'Home' })
             this.signInButtonLoading = false
           })

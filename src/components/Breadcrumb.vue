@@ -4,13 +4,13 @@
             <ul class="breadcrumb">
                 <template v-for="(item, index) in items">
                     <template v-if="index + 1 == items.length">
-                        <li class="breadcrumb-item active">
+                        <li class="breadcrumb-item active" :key="index">
                             {{ item.text }}
                         </li>
                     </template>
 
                     <template v-else>
-                        <li class="breadcrumb-item">
+                        <li class="breadcrumb-item" :key="index">
                             <template v-if="item.nativeFn">
                                 <router-link
                                         class="border-0"

@@ -7,8 +7,8 @@
         </h4>
 
         <ul class="list-group mb-3">
-            <template v-for="item in items">
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <template v-for="(item, index) in items">
+                <li class="list-group-item d-flex justify-content-between lh-condensed" :key="index">
                     <div class="d-flex align-items-center">
                         <i class="fa fa-times pointer" @click="spliceItems(item)"></i>
                     </div>

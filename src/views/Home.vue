@@ -14,11 +14,12 @@
                     </div>
 
                     <ul class="list-group category_block">
-                        <template v-for="category in categories">
+                        <template v-for="(category, index) in categories">
                             <li
                                     class="list-group-item pointer"
                                     :class="category.id === selectedCategory.id ? 'text-primary' : ''"
                                     @click="setSelectedCategory(category)"
+                                    :key="index"
                             >
                                 {{ category.name }}
                             </li>
@@ -66,7 +67,7 @@
 </template>
 
 <script>
-  import { mapMutations, mapActions, mapGetters } from 'vuex'
+  import { mapMutations, mapGetters } from 'vuex'
   import { Breadcrumb, Cart } from '../components'
 
   export default {
